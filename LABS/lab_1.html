@@ -13,13 +13,35 @@
 	<div id="tickets"></div>
     
 
-    <div id="box"></div>
-    <!--
-     <div id="box1"></div>
-    -->
+    <div id="box">a</div>
+    
+     <div id="box1">s</div>
+   
 	
 	
 <script>
+ 
+let box = document.querySelector('#box')
+
+ function animateIt(el,){
+       let left = 0,
+           top = 0;
+
+       return function a(interval){
+           left += interval;
+           top += interval;
+           el.style.position = 'absolute';
+           el.style.top = top;
+           el.style.left = left;
+           console.log('box' + left)
+           console.log('box' + top)
+           return a
+
+       }
+   }
+
+   setInterval( animateIt, box, 10, 200 );
+
 
 
 </script>
